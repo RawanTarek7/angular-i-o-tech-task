@@ -32,7 +32,6 @@ export class ClientListComponent implements OnInit, OnDestroy {
   }
 
   editTableItem(element: any) {
-    console.log('edit', element.id)
     this.router.navigate(['/clients/' + element.id]);
 
 
@@ -40,7 +39,6 @@ export class ClientListComponent implements OnInit, OnDestroy {
 
   deleteTableItem(element: any) {
     this.gymService.deleteClient(element.id).then((response) => {
-      console.log('Client deleted:', response);
       this.getClients()
       this.snackBar.open('Client deleted successfully', 'Dismiss', {
         duration: 500,

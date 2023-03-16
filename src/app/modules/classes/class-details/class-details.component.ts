@@ -92,7 +92,6 @@ export class ClassDetailsComponent implements OnInit {
   setClassDetails(): void {
     this.gymService.getClass(Number(this.classID))
       .then(classes => {
-        console.log('ooooh', classes)
         this.classForm.setValue(classes)
       })
       .catch(error => {

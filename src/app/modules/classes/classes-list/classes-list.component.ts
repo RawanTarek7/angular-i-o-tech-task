@@ -31,14 +31,11 @@ export class ClassesListComponent implements OnInit {
 
 
   editTableItem(element: any) {
-    console.log('edit', element.title)
     this.router.navigate(['/classes/' + element.id]);
-
   }
 
   deleteTableItem(element: any) {
     this.gymService.deleteClass(element.id).then((response) => {
-      console.log('Client deleted:', response);
       this.getClasses()
       this.snackBar.open('Class deleted successfully', 'Dismiss', {
         duration: 500,
@@ -47,7 +44,6 @@ export class ClassesListComponent implements OnInit {
       this.snackBar.open(`Error deleting class`, 'Dismiss', {
         duration: 500,
       });
-      console.error('Error deleting class:', error);
     });
   }
 

@@ -69,7 +69,6 @@ export class ClientDetailsComponent implements OnInit {
   setClientDetails(): void {
     this.gymService.getClient(Number(this.clientID))
       .then(client => {
-        console.log('ooooh', client)
         this.clientForm.setValue(client)
       })
       .catch(error => {
