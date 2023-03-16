@@ -1,0 +1,57 @@
+<div class="class-details">
+  <span class="title">        {{isNew ? 'Create New Class' : 'Update Class'}}
+    </span>
+  <form [formGroup]="classForm">
+    <div class="class-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Class Title</mat-label>
+        <input matInput formControlName="title" required>
+        <mat-error *ngIf="classForm.get('title')?.invalid">Title is required</mat-error>
+
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Coach Name</mat-label>
+        <input type="name" matInput formControlName="coach_name" required>
+        <mat-error *ngIf="classForm.get('coach_name')?.invalid">Coach Name is required</mat-error>
+      </mat-form-field>
+
+    </div>
+    <div class="class-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Class Description</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Coach Brief</mat-label>
+        <input type="name" matInput formControlName="coach_brief">
+      </mat-form-field>
+    </div>
+
+    <div class="class-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Class Timing</mat-label>
+        <input matInput formControlName="timing">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Class Price</mat-label>
+        <input matInput formControlName="price">
+      </mat-form-field>
+
+    </div>
+    <div class="create">
+
+      <button
+        class="create-class"
+        mat-raised-button color="primary"
+        [disabled]="!classForm.get('title')?.valid || !classForm.get('coach_name')?.valid"
+        (click)="onSubmit()">
+        {{isNew ? 'Create' : 'Update'}}
+      </button>
+    </div>
+  </form>
+</div>

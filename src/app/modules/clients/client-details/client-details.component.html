@@ -1,0 +1,58 @@
+<div class="client-details">
+  <span class="title">        {{isNew ? 'Add New Client' : 'Update Client Details'}}
+    </span>
+
+  <form [formGroup]="clientForm">
+    <div class="form-row">
+      <mat-card *ngIf="!isNew">
+        <img mat-card-lg-image
+             alt=""
+             (error)="setPlaceholderImage()"
+             src="assets/default-avatar.png">
+      </mat-card>
+
+      <button *ngIf="isNew" mat-stroked-button color="primary" class="add-avatar"
+              (click)="onFileSelected($event)">
+        <mat-icon>add</mat-icon>
+        Add Avatar
+      </button>
+
+    </div>
+    <div class="form-row">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input type="text" matInput formControlName="full_name">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput formControlName="mobile_number">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="address">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>subscription Type</mat-label>
+        <input matInput formControlName="subscription_plan">
+      </mat-form-field>
+
+
+    </div>
+    <div class="create">
+
+      <button class="create-client" mat-raised-button color="primary" [disabled]="!clientForm.valid"
+              (click)="onSubmit()">
+        {{isNew ? 'Add' : 'Update'}}
+
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+.navbar {
+  height: 100vh;
+}
+
+mat-drawer {
+  width: 170px;
+}
+
+a mat-list-item {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.navbar-Link {
+  display: inline-block;
+}
+
+
+.navbar-active-link {
+  background-color: #8484845c;
+}

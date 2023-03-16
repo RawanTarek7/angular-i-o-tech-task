@@ -1,0 +1,47 @@
+.client-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  display: flex;
+  margin: 50px 25px 25px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.form-row{
+  gap: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin: 15px;
+}
+
+.create-client{
+  width: 300px;
+  height: 50px;
+  margin: 25px;
+}
+.create{
+  display: flex;
+  justify-content: center;
+}
+
+form{
+  margin-top: 30px;
+}
+mat-form-field{
+  width: 350px;
+}
+
+mat-card{
+  width: fit-content;
+  margin: 25px;
+  border-radius: 5px;
+
+}
+.add-avatar{
+  margin: 25px;
+  width: 150px;
+}
